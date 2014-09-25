@@ -15,7 +15,10 @@ ActiveAdmin.register Reading do
     column :value
 
     column :comments do |reading|
-      comments = ActiveAdmin::Comment.where(resource: reading).map(&:body)
+      comments = ActiveAdmin::Comment.
+                  where(resource_type: reading.class.name).
+                  where(resource_id: reading.id.to_s).
+                  map(&:body)
       items = comments.inject('') { |html, body| html << "<li>#{body}</li>" }
       ul = "<ul>#{items}</ul>"
       ul.html_safe
