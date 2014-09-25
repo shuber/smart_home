@@ -1,7 +1,9 @@
 require 'rails_helper'
 
 RSpec.describe Sensor do
-  subject { FactoryGirl.build :sensor }
+  subject { build :sensor }
+
+  it { should have_many :readings }
 
   it { should allow_value("Temperature").for :type }
   it { should_not allow_value("invalid").for :type }
