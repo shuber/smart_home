@@ -5,7 +5,7 @@ ActiveAdmin.register Sensor do
     column :type
 
     column "Last updated" do |sensor|
-      since = time_ago_in_words sensor.created_at
+      since = time_ago_in_words sensor.updated_at
       "#{since} ago"
     end
 
