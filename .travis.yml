@@ -1,0 +1,7 @@
+deploy:
+  provider: heroku
+  api_key:
+    secure: c3qNaFcUB4jbmDDFMNrma1c8dWgb6K0m9O6oExBpqqmy6GnaiGcdh41UgLxsZMJtL6eQIa8+3VhJKjXkuMvRMn6Q/UdRuqfePqWXV53uM2qqteDtIULuLQzktJxT0AjTOct9/gs07JBx+GAaMKyijRgc19S1BV+r1duWjGoPg+k=
+  app: huber-smart-home
+  on:
+    repo: shuber/smart_home
