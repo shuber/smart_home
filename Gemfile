@@ -28,6 +28,8 @@ gem 'spring',        group: :development
 
 gem 'activeadmin', github: 'activeadmin'
 
+gem 'thin'
+
 group :development, :test do
   gem "factory_girl_rails"
   gem 'rspec-rails'
