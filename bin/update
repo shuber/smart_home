@@ -1,5 +1,5 @@
 #!/bin/bash
 git pull origin master
-bundle install
+# bundle install
 RAILS_ENV=production bundle exec rake db:migrate --trace
 RAILS_ENV=production bundle exec rake assets:precompile --trace
