@@ -5,3 +5,6 @@ deploy:
   app: huber-smart-home
   on:
     repo: shuber/smart_home
+  run:
+    - "rake db:migrate"
+    - "rake cleanup"
