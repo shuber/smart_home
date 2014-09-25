@@ -7,4 +7,3 @@ deploy:
     repo: shuber/smart_home
   run:
     - "rake db:migrate"
-    - "rake cleanup"
