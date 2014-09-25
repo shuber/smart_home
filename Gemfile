@@ -32,6 +32,10 @@ gem 'thin'
 
 gem 'rack-cache'
 
+# Charts
+gem 'groupdate'
+gem 'chartkick'
+
 group :development, :test do
   gem "factory_girl_rails"
   gem 'rspec-rails'
