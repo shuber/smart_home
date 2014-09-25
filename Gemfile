@@ -26,10 +26,13 @@ gem 'sdoc', '~> 0.4.0',          group: :doc
 # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
 gem 'spring',        group: :development
 
+# Admin panel found at /admin
 gem 'activeadmin', github: 'activeadmin'
 
+# A ruby webserver to run the application
 gem 'thin'
 
+# Cache production assets
 gem 'rack-cache'
 
 # Charts
