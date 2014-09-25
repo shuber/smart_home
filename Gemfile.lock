@@ -99,6 +99,8 @@ GEM
     polyamorous (1.1.0)
       activerecord (>= 3.0)
     rack (1.5.2)
+    rack-cache (1.2)
+      rack (>= 0.4)
     rack-test (0.6.2)
       rack (>= 1.0)
     rails (4.1.6)
@@ -197,6 +199,7 @@ DEPENDENCIES
   factory_girl_rails
   jbuilder (~> 2.0)
   jquery-rails
+  rack-cache
   rails (= 4.1.6)
   rspec-rails
   sass-rails (~> 4.0.3)
