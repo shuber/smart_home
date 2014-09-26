@@ -16,12 +16,6 @@ ActiveAdmin.register_page "Dashboard" do
           line_chart metrics, min: 70, max: 90, discrete: true
         end
       end
-
-      column do
-        panel "Todo" do
-          para "What other types of charts should we add?"
-        end
-      end
     end
   end
 end
