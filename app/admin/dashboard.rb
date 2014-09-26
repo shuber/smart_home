@@ -5,7 +5,7 @@ ActiveAdmin.register_page "Dashboard" do
     columns do
       column do
         panel "Temperature" do
-          date_range = 1.hour.ago..Time.now
+          date_range = 5.hours.ago..Time.now
           readings = Reading.temperature.where created_at: date_range
 
           metrics = readings.inject({}) do |hash, reading|
