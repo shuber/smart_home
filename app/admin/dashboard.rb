@@ -7,7 +7,11 @@ ActiveAdmin.register_page "Dashboard" do
         panel "Temperature" do
           date_range = 1.day.ago.beginning_of_day..Time.now
 
-          readings = Reading.temperature.where created_at: date_range
+          readings = Reading.
+                      temperature.
+                      where(created_at: date_range).
+                      order :created_at
+
           readings = readings.group_by do |reading|
             reading.created_at.to_date
           end
