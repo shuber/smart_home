@@ -5,15 +5,26 @@ ActiveAdmin.register_page "Dashboard" do
     columns do
       column do
         panel "Temperature" do
-          date_range = 24.hours.ago..Time.now
-          readings = Reading.temperature.where created_at: date_range
+          date_range = 1.day.ago.beginning_of_day..Time.now
 
-          metrics = readings.inject({}) do |hash, reading|
-            timestamp = reading.created_at.strftime("%I:%M%p")
-            hash.update timestamp => reading.value
+          readings = Reading.temperature.where created_at: date_range
+          readings = readings.group_by do |reading|
+            reading.created_at.to_date
           end
 
-          line_chart metrics, min: 70, max: 90, discrete: true
+          lines = readings.inject([]) do |metrics, (date, grouped)|
+            name = date.strftime "%A"
+
+            data = grouped.inject({}) do |hash, reading|
+              timestamp = reading.created_at.strftime("%I:%M%p")
+              hash.update timestamp => reading.value
+            end
+
+            line = { name: name, data: data }
+            metrics << line
+          end
+
+          line_chart lines, min: 68, max: 85, discrete: true
         end
       end
     end
