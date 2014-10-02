@@ -28,7 +28,7 @@ ActiveAdmin.register_page "Dashboard" do
             metrics << line
           end
 
-          line_chart lines, min: nil, max: nil, discrete: false
+          line_chart lines, min: 68, max: 85, discrete: true
         end
       end
     end
